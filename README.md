@@ -302,6 +302,7 @@ Class | Method | HTTP request | Description
 - **Authorization URL**: https://nextgen.kajomigenerator.de/oauth2/login
 - **Scopes**: N/A
 
+Use an oAuth client to obtain the ACCESS_TOKEN or just get one via https interface at `https://nextgen.kajomigenerator.de/docs/#/Bounces`
 
 ## Author
 
