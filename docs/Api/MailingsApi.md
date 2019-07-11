@@ -5,12 +5,17 @@ All URIs are relative to *https://nextgen.kajomigenerator.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**mailingIdDelete**](MailingsApi.md#mailingIdDelete) | **DELETE** /mailing/{id} | 
+[**mailingIdExportGet**](MailingsApi.md#mailingIdExportGet) | **GET** /mailing/{id}/export | 
 [**mailingIdGet**](MailingsApi.md#mailingIdGet) | **GET** /mailing/{id} | 
+[**mailingIdLinkId2Get**](MailingsApi.md#mailingIdLinkId2Get) | **GET** /mailing/{id}/link/{id2} | 
+[**mailingIdLinkId2Put**](MailingsApi.md#mailingIdLinkId2Put) | **PUT** /mailing/{id}/link/{id2} | 
+[**mailingIdLinksGet**](MailingsApi.md#mailingIdLinksGet) | **GET** /mailing/{id}/links | 
 [**mailingIdPut**](MailingsApi.md#mailingIdPut) | **PUT** /mailing/{id} | 
 [**mailingIdQueuePut**](MailingsApi.md#mailingIdQueuePut) | **PUT** /mailing/{id}/queue | 
 [**mailingsGet**](MailingsApi.md#mailingsGet) | **GET** /mailings | 
 [**mailingsPost**](MailingsApi.md#mailingsPost) | **POST** /mailings | 
 [**mailingsPut**](MailingsApi.md#mailingsPut) | **PUT** /mailings | 
+[**mailingslogsGet**](MailingsApi.md#mailingslogsGet) | **GET** /mailingslogs | 
 [**spamcheckPut**](MailingsApi.md#spamcheckPut) | **PUT** /spamcheck | 
 
 
@@ -66,6 +71,59 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **mailingIdExportGet**
+> \SplFileObject mailingIdExportGet($id)
+
+
+
+Export mailing as pdf
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\MailingsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | mailing_id
+
+try {
+    $result = $apiInstance->mailingIdExportGet($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MailingsApi->mailingIdExportGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| mailing_id |
+
+### Return type
+
+[**\SplFileObject**](../Model/\SplFileObject.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/pdf
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **mailingIdGet**
 > \Swagger\Client\Model\MailingGet mailingIdGet($id)
 
@@ -107,6 +165,167 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\MailingGet**](../Model/MailingGet.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **mailingIdLinkId2Get**
+> \Swagger\Client\Model\MailingLink mailingIdLinkId2Get($id, $id2)
+
+
+
+Get on link
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\MailingsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | mailing_id
+$id2 = 56; // int | link id
+
+try {
+    $result = $apiInstance->mailingIdLinkId2Get($id, $id2);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MailingsApi->mailingIdLinkId2Get: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| mailing_id |
+ **id2** | **int**| link id |
+
+### Return type
+
+[**\Swagger\Client\Model\MailingLink**](../Model/MailingLink.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **mailingIdLinkId2Put**
+> \Swagger\Client\Model\MailingLink mailingIdLinkId2Put($id, $id2, $body)
+
+
+
+Get on link
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\MailingsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | mailing_id
+$id2 = 56; // int | link id
+$body = new \Swagger\Client\Model\MailingLinkPut(); // \Swagger\Client\Model\MailingLinkPut | template
+
+try {
+    $result = $apiInstance->mailingIdLinkId2Put($id, $id2, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MailingsApi->mailingIdLinkId2Put: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| mailing_id |
+ **id2** | **int**| link id |
+ **body** | [**\Swagger\Client\Model\MailingLinkPut**](../Model/MailingLinkPut.md)| template |
+
+### Return type
+
+[**\Swagger\Client\Model\MailingLink**](../Model/MailingLink.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **mailingIdLinksGet**
+> \Swagger\Client\Model\MailingLinks mailingIdLinksGet()
+
+
+
+Get Links of mailing
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\MailingsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->mailingIdLinksGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MailingsApi->mailingIdLinksGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\MailingLinks**](../Model/MailingLinks.md)
 
 ### Authorization
 
@@ -376,6 +595,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\MailingsPutResult**](../Model/MailingsPutResult.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **mailingslogsGet**
+> \Swagger\Client\Model\SentInfoList mailingslogsGet($email, $streaming)
+
+
+
+Get email mailing info
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\MailingsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$email = "email_example"; // string | email to look up
+$streaming = true; // bool | should it be a streamhandler
+
+try {
+    $result = $apiInstance->mailingslogsGet($email, $streaming);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MailingsApi->mailingslogsGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **string**| email to look up |
+ **streaming** | **bool**| should it be a streamhandler | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\SentInfoList**](../Model/SentInfoList.md)
 
 ### Authorization
 

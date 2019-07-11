@@ -4,12 +4,14 @@ All URIs are relative to *https://nextgen.kajomigenerator.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**listIdBlacklistImportsPost**](BlacklistsApi.md#listIdBlacklistImportsPost) | **POST** /list/{id}/blacklist/imports | 
 [**listIdBlacklistItemId2Delete**](BlacklistsApi.md#listIdBlacklistItemId2Delete) | **DELETE** /list/{id}/blacklist/item/{id2} | 
 [**listIdBlacklistItemId2Get**](BlacklistsApi.md#listIdBlacklistItemId2Get) | **GET** /list/{id}/blacklist/item/{id2} | 
 [**listIdBlacklistItemsDelete**](BlacklistsApi.md#listIdBlacklistItemsDelete) | **DELETE** /list/{id}/blacklist/items | 
 [**listIdBlacklistItemsExportGet**](BlacklistsApi.md#listIdBlacklistItemsExportGet) | **GET** /list/{id}/blacklist/items/export | 
 [**listIdBlacklistItemsGet**](BlacklistsApi.md#listIdBlacklistItemsGet) | **GET** /list/{id}/blacklist/items | 
 [**listIdBlacklistItemsPost**](BlacklistsApi.md#listIdBlacklistItemsPost) | **POST** /list/{id}/blacklist/items | 
+[**listsBlacklistImportsPost**](BlacklistsApi.md#listsBlacklistImportsPost) | **POST** /lists/blacklist/imports | 
 [**listsBlacklistItemId2Delete**](BlacklistsApi.md#listsBlacklistItemId2Delete) | **DELETE** /lists/blacklist/item/{id2} | 
 [**listsBlacklistItemId2Get**](BlacklistsApi.md#listsBlacklistItemId2Get) | **GET** /lists/blacklist/item/{id2} | 
 [**listsBlacklistItemsDelete**](BlacklistsApi.md#listsBlacklistItemsDelete) | **DELETE** /lists/blacklist/items | 
@@ -17,6 +19,61 @@ Method | HTTP request | Description
 [**listsBlacklistItemsGet**](BlacklistsApi.md#listsBlacklistItemsGet) | **GET** /lists/blacklist/items | 
 [**listsBlacklistItemsPost**](BlacklistsApi.md#listsBlacklistItemsPost) | **POST** /lists/blacklist/items | 
 
+
+# **listIdBlacklistImportsPost**
+> \Swagger\Client\Model\BlacklistImportPost listIdBlacklistImportsPost($id, $file)
+
+
+
+Add all entries from file to the blacklist. If listnum is 0 or not set its the global blacklist
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\BlacklistsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 
+$file = "/path/to/file.txt"; // \SplFileObject | the csv file of the blacklist import
+
+try {
+    $result = $apiInstance->listIdBlacklistImportsPost($id, $file);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BlacklistsApi->listIdBlacklistImportsPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  |
+ **file** | **\SplFileObject**| the csv file of the blacklist import |
+
+### Return type
+
+[**\Swagger\Client\Model\BlacklistImportPost**](../Model/BlacklistImportPost.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listIdBlacklistItemId2Delete**
 > listIdBlacklistItemId2Delete($id, $id2)
@@ -181,7 +238,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listIdBlacklistItemsExportGet**
-> \Swagger\Client\Model\Blacklist listIdBlacklistItemsExportGet($id)
+> \Swagger\Client\Model\Blacklist listIdBlacklistItemsExportGet($id, $from, $to)
 
 
 
@@ -202,9 +259,11 @@ $apiInstance = new Swagger\Client\Api\BlacklistsApi(
     $config
 );
 $id = 8.14; // float | list id
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
 
 try {
-    $result = $apiInstance->listIdBlacklistItemsExportGet($id);
+    $result = $apiInstance->listIdBlacklistItemsExportGet($id, $from, $to);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlacklistsApi->listIdBlacklistItemsExportGet: ', $e->getMessage(), PHP_EOL;
@@ -217,6 +276,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **float**| list id |
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
 
 ### Return type
 
@@ -343,6 +404,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **listsBlacklistImportsPost**
+> \Swagger\Client\Model\BlacklistImportPost listsBlacklistImportsPost($file)
+
+
+
+Add all entries from file to the blacklist. If listnum is 0 or not set its the global blacklist
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\BlacklistsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$file = "/path/to/file.txt"; // \SplFileObject | the csv file of the blacklist import
+
+try {
+    $result = $apiInstance->listsBlacklistImportsPost($file);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BlacklistsApi->listsBlacklistImportsPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **\SplFileObject**| the csv file of the blacklist import |
+
+### Return type
+
+[**\Swagger\Client\Model\BlacklistImportPost**](../Model/BlacklistImportPost.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -502,7 +616,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listsBlacklistItemsExportGet**
-> \Swagger\Client\Model\Blacklist listsBlacklistItemsExportGet()
+> \Swagger\Client\Model\Blacklist listsBlacklistItemsExportGet($from, $to)
 
 
 
@@ -522,9 +636,11 @@ $apiInstance = new Swagger\Client\Api\BlacklistsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$from = "from_example"; // string | 
+$to = "to_example"; // string | 
 
 try {
-    $result = $apiInstance->listsBlacklistItemsExportGet();
+    $result = $apiInstance->listsBlacklistItemsExportGet($from, $to);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlacklistsApi->listsBlacklistItemsExportGet: ', $e->getMessage(), PHP_EOL;
@@ -533,7 +649,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **string**|  | [optional]
+ **to** | **string**|  | [optional]
 
 ### Return type
 
