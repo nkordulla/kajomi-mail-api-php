@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionMailCreatePostResult
+ * Tag
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * TransactionMailCreatePostResult Class Doc Comment
+ * Tag Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
+class Tag implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'transactionMailCreatePostResult';
+    protected static $swaggerModelName = 'tag';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,14 +58,7 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'float',
-        'senderemail' => 'string',
-        'rcptemail' => 'string',
-        'subject' => 'string',
-        'sent_id' => 'float',
-        'class_name' => 'string',
-        'attachments' => '\Swagger\Client\Model\TransactionMailCreatePostResultAttachments[]',
-        'guid' => 'string',
-        'mailing' => '\Swagger\Client\Model\TransactionMailing'
+        'tag' => 'string'
     ];
 
     /**
@@ -75,14 +68,7 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-        'senderemail' => null,
-        'rcptemail' => null,
-        'subject' => null,
-        'sent_id' => null,
-        'class_name' => null,
-        'attachments' => null,
-        'guid' => null,
-        'mailing' => null
+        'tag' => null
     ];
 
     /**
@@ -113,14 +99,7 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'senderemail' => 'senderemail',
-        'rcptemail' => 'rcptemail',
-        'subject' => 'subject',
-        'sent_id' => 'sent_id',
-        'class_name' => 'class_name',
-        'attachments' => 'attachments',
-        'guid' => 'guid',
-        'mailing' => 'mailing'
+        'tag' => 'tag'
     ];
 
     /**
@@ -130,14 +109,7 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'senderemail' => 'setSenderemail',
-        'rcptemail' => 'setRcptemail',
-        'subject' => 'setSubject',
-        'sent_id' => 'setSentId',
-        'class_name' => 'setClassName',
-        'attachments' => 'setAttachments',
-        'guid' => 'setGuid',
-        'mailing' => 'setMailing'
+        'tag' => 'setTag'
     ];
 
     /**
@@ -147,14 +119,7 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'senderemail' => 'getSenderemail',
-        'rcptemail' => 'getRcptemail',
-        'subject' => 'getSubject',
-        'sent_id' => 'getSentId',
-        'class_name' => 'getClassName',
-        'attachments' => 'getAttachments',
-        'guid' => 'getGuid',
-        'mailing' => 'getMailing'
+        'tag' => 'getTag'
     ];
 
     /**
@@ -218,14 +183,7 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['senderemail'] = isset($data['senderemail']) ? $data['senderemail'] : null;
-        $this->container['rcptemail'] = isset($data['rcptemail']) ? $data['rcptemail'] : null;
-        $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
-        $this->container['sent_id'] = isset($data['sent_id']) ? $data['sent_id'] : null;
-        $this->container['class_name'] = isset($data['class_name']) ? $data['class_name'] : null;
-        $this->container['attachments'] = isset($data['attachments']) ? $data['attachments'] : null;
-        $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
-        $this->container['mailing'] = isset($data['mailing']) ? $data['mailing'] : null;
+        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
     }
 
     /**
@@ -265,7 +223,7 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param float $id id of the transaction mail
+     * @param float $id the tag id
      *
      * @return $this
      */
@@ -277,193 +235,25 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets senderemail
+     * Gets tag
      *
      * @return string
      */
-    public function getSenderemail()
+    public function getTag()
     {
-        return $this->container['senderemail'];
+        return $this->container['tag'];
     }
 
     /**
-     * Sets senderemail
+     * Sets tag
      *
-     * @param string $senderemail senderemail
+     * @param string $tag text of the tag
      *
      * @return $this
      */
-    public function setSenderemail($senderemail)
+    public function setTag($tag)
     {
-        $this->container['senderemail'] = $senderemail;
-
-        return $this;
-    }
-
-    /**
-     * Gets rcptemail
-     *
-     * @return string
-     */
-    public function getRcptemail()
-    {
-        return $this->container['rcptemail'];
-    }
-
-    /**
-     * Sets rcptemail
-     *
-     * @param string $rcptemail mail of user
-     *
-     * @return $this
-     */
-    public function setRcptemail($rcptemail)
-    {
-        $this->container['rcptemail'] = $rcptemail;
-
-        return $this;
-    }
-
-    /**
-     * Gets subject
-     *
-     * @return string
-     */
-    public function getSubject()
-    {
-        return $this->container['subject'];
-    }
-
-    /**
-     * Sets subject
-     *
-     * @param string $subject subject
-     *
-     * @return $this
-     */
-    public function setSubject($subject)
-    {
-        $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets sent_id
-     *
-     * @return float
-     */
-    public function getSentId()
-    {
-        return $this->container['sent_id'];
-    }
-
-    /**
-     * Sets sent_id
-     *
-     * @param float $sent_id the send_id representation for all the bundeled TransactionMails of this class
-     *
-     * @return $this
-     */
-    public function setSentId($sent_id)
-    {
-        $this->container['sent_id'] = $sent_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets class_name
-     *
-     * @return string
-     */
-    public function getClassName()
-    {
-        return $this->container['class_name'];
-    }
-
-    /**
-     * Sets class_name
-     *
-     * @param string $class_name the classname
-     *
-     * @return $this
-     */
-    public function setClassName($class_name)
-    {
-        $this->container['class_name'] = $class_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets attachments
-     *
-     * @return \Swagger\Client\Model\TransactionMailCreatePostResultAttachments[]
-     */
-    public function getAttachments()
-    {
-        return $this->container['attachments'];
-    }
-
-    /**
-     * Sets attachments
-     *
-     * @param \Swagger\Client\Model\TransactionMailCreatePostResultAttachments[] $attachments the attachments
-     *
-     * @return $this
-     */
-    public function setAttachments($attachments)
-    {
-        $this->container['attachments'] = $attachments;
-
-        return $this;
-    }
-
-    /**
-     * Gets guid
-     *
-     * @return string
-     */
-    public function getGuid()
-    {
-        return $this->container['guid'];
-    }
-
-    /**
-     * Sets guid
-     *
-     * @param string $guid guid of the transaction mail can be used for querying the server feedback. used for get request
-     *
-     * @return $this
-     */
-    public function setGuid($guid)
-    {
-        $this->container['guid'] = $guid;
-
-        return $this;
-    }
-
-    /**
-     * Gets mailing
-     *
-     * @return \Swagger\Client\Model\TransactionMailing
-     */
-    public function getMailing()
-    {
-        return $this->container['mailing'];
-    }
-
-    /**
-     * Sets mailing
-     *
-     * @param \Swagger\Client\Model\TransactionMailing $mailing Mail to send
-     *
-     * @return $this
-     */
-    public function setMailing($mailing)
-    {
-        $this->container['mailing'] = $mailing;
+        $this->container['tag'] = $tag;
 
         return $this;
     }

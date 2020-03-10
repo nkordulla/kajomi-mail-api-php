@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionMailCreatePostResultAttachments
+ * InlineResponse200
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * TransactionMailCreatePostResultAttachments Class Doc Comment
+ * InlineResponse200 Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TransactionMailCreatePostResultAttachments implements ModelInterface, ArrayAccess
+class InlineResponse200 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $swaggerModelName = 'transactionMailCreatePostResult_attachments';
+    protected static $swaggerModelName = 'inline_response_200';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filename' => 'string'
+        'deleted' => 'bool'
     ];
 
     /**
@@ -66,7 +66,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'filename' => null
+        'deleted' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'filename' => 'filename'
+        'deleted' => 'deleted'
     ];
 
     /**
@@ -105,7 +105,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'filename' => 'setFilename'
+        'deleted' => 'setDeleted'
     ];
 
     /**
@@ -114,7 +114,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'filename' => 'getFilename'
+        'deleted' => 'getDeleted'
     ];
 
     /**
@@ -177,7 +177,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
     }
 
     /**
@@ -205,25 +205,25 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
 
 
     /**
-     * Gets filename
+     * Gets deleted
      *
-     * @return string
+     * @return bool
      */
-    public function getFilename()
+    public function getDeleted()
     {
-        return $this->container['filename'];
+        return $this->container['deleted'];
     }
 
     /**
-     * Sets filename
+     * Sets deleted
      *
-     * @param string $filename the name of the filename
+     * @param bool $deleted deleted
      *
      * @return $this
      */
-    public function setFilename($filename)
+    public function setDeleted($deleted)
     {
-        $this->container['filename'] = $filename;
+        $this->container['deleted'] = $deleted;
 
         return $this;
     }

@@ -110,6 +110,7 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**listsGet**](docs/Api/ListsApi.md#listsget) | **GET** /lists | 
 *ListsApi* | [**listsSettingsGet**](docs/Api/ListsApi.md#listssettingsget) | **GET** /lists/settings | 
 *ListsApi* | [**testaddressesGet**](docs/Api/ListsApi.md#testaddressesget) | **GET** /testaddresses | 
+*MailingsApi* | [**mailingIdArchivePut**](docs/Api/MailingsApi.md#mailingidarchiveput) | **PUT** /mailing/{id}/archive | 
 *MailingsApi* | [**mailingIdDelete**](docs/Api/MailingsApi.md#mailingiddelete) | **DELETE** /mailing/{id} | 
 *MailingsApi* | [**mailingIdExportGet**](docs/Api/MailingsApi.md#mailingidexportget) | **GET** /mailing/{id}/export | 
 *MailingsApi* | [**mailingIdGet**](docs/Api/MailingsApi.md#mailingidget) | **GET** /mailing/{id} | 
@@ -144,6 +145,14 @@ Class | Method | HTTP request | Description
 *StatisticsApi* | [**listIdStatisticsUsersGet**](docs/Api/StatisticsApi.md#listidstatisticsusersget) | **GET** /list/{id}/statistics/users | 
 *StatisticsApi* | [**statisticsGet**](docs/Api/StatisticsApi.md#statisticsget) | **GET** /statistics | 
 *StatisticsApi* | [**statisticsUsersGet**](docs/Api/StatisticsApi.md#statisticsusersget) | **GET** /statistics/users | 
+*TagsApi* | [**mailingIdTagId2Delete**](docs/Api/TagsApi.md#mailingidtagid2delete) | **DELETE** /mailing/{id}/tag/{id2} | 
+*TagsApi* | [**mailingIdTagsGet**](docs/Api/TagsApi.md#mailingidtagsget) | **GET** /mailing/{id}/tags | 
+*TagsApi* | [**mailingIdTagsPost**](docs/Api/TagsApi.md#mailingidtagspost) | **POST** /mailing/{id}/tags | 
+*TagsApi* | [**tagIdDelete**](docs/Api/TagsApi.md#tagiddelete) | **DELETE** /tag/{id} | 
+*TagsApi* | [**tagIdGet**](docs/Api/TagsApi.md#tagidget) | **GET** /tag/{id} | 
+*TagsApi* | [**tagIdPut**](docs/Api/TagsApi.md#tagidput) | **PUT** /tag/{id} | 
+*TagsApi* | [**tagsGet**](docs/Api/TagsApi.md#tagsget) | **GET** /tags | 
+*TagsApi* | [**tagsPost**](docs/Api/TagsApi.md#tagspost) | **POST** /tags | 
 *TemplatesApi* | [**templateIdDelete**](docs/Api/TemplatesApi.md#templateiddelete) | **DELETE** /template/{id} | 
 *TemplatesApi* | [**templateIdGet**](docs/Api/TemplatesApi.md#templateidget) | **GET** /template/{id} | 
 *TemplatesApi* | [**templateIdPut**](docs/Api/TemplatesApi.md#templateidput) | **PUT** /template/{id} | 
@@ -185,6 +194,10 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**listsUsersImportsGet**](docs/Api/UsersApi.md#listsusersimportsget) | **GET** /lists/users/imports | 
 *UsersApi* | [**usersDelete**](docs/Api/UsersApi.md#usersdelete) | **DELETE** /users | 
 *UsersApi* | [**usersExportPost**](docs/Api/UsersApi.md#usersexportpost) | **POST** /users/export | 
+*UsersApi* | [**usersLeadExternReceiverIdId2Get**](docs/Api/UsersApi.md#usersleadexternreceiveridid2get) | **GET** /users/lead/extern/receiver/{id}/{id2} | 
+*UsersApi* | [**usersLeadReceiverIdDelete**](docs/Api/UsersApi.md#usersleadreceiveriddelete) | **DELETE** /users/lead/receiver/{id} | 
+*UsersApi* | [**usersLeadReceiverIdGet**](docs/Api/UsersApi.md#usersleadreceiveridget) | **GET** /users/lead/receiver/{id} | 
+*UsersApi* | [**usersLeadReceiversPost**](docs/Api/UsersApi.md#usersleadreceiverspost) | **POST** /users/lead/receivers | 
 *UsersApi* | [**usersPut**](docs/Api/UsersApi.md#usersput) | **PUT** /users | 
 *UsersApi* | [**usersUpdatePut**](docs/Api/UsersApi.md#usersupdateput) | **PUT** /users/update | 
 
@@ -217,6 +230,7 @@ Class | Method | HTTP request | Description
  - [GeneratorsAccessTokens](docs/Model/GeneratorsAccessTokens.md)
  - [Htmlresponse](docs/Model/Htmlresponse.md)
  - [IgnoreLinks](docs/Model/IgnoreLinks.md)
+ - [InlineResponse200](docs/Model/InlineResponse200.md)
  - [LinkElement](docs/Model/LinkElement.md)
  - [ListSettings](docs/Model/ListSettings.md)
  - [Listaddresses](docs/Model/Listaddresses.md)
@@ -225,12 +239,14 @@ Class | Method | HTTP request | Description
  - [ListsSettings](docs/Model/ListsSettings.md)
  - [Mailing](docs/Model/Mailing.md)
  - [MailingAmount](docs/Model/MailingAmount.md)
+ - [MailingArchivePut](docs/Model/MailingArchivePut.md)
  - [MailingGet](docs/Model/MailingGet.md)
  - [MailingLink](docs/Model/MailingLink.md)
  - [MailingLinkPut](docs/Model/MailingLinkPut.md)
  - [MailingLinks](docs/Model/MailingLinks.md)
  - [MailingOverView](docs/Model/MailingOverView.md)
  - [MailingQueuePut](docs/Model/MailingQueuePut.md)
+ - [MailingTag](docs/Model/MailingTag.md)
  - [Mailings](docs/Model/Mailings.md)
  - [MailingsPost](docs/Model/MailingsPost.md)
  - [MailingsPostResult](docs/Model/MailingsPostResult.md)
@@ -277,6 +293,10 @@ Class | Method | HTTP request | Description
  - [StatisticBounces](docs/Model/StatisticBounces.md)
  - [StatisticOpens](docs/Model/StatisticOpens.md)
  - [Statistics](docs/Model/Statistics.md)
+ - [Tag](docs/Model/Tag.md)
+ - [TagPost](docs/Model/TagPost.md)
+ - [TagTextInBody](docs/Model/TagTextInBody.md)
+ - [Tags](docs/Model/Tags.md)
  - [Template](docs/Model/Template.md)
  - [TemplatePut](docs/Model/TemplatePut.md)
  - [TemplateSmall](docs/Model/TemplateSmall.md)
@@ -300,6 +320,8 @@ Class | Method | HTTP request | Description
  - [UserImportsGetSmallNumber](docs/Model/UserImportsGetSmallNumber.md)
  - [UserImportsGetSmallNumberInvalid](docs/Model/UserImportsGetSmallNumberInvalid.md)
  - [UserImportsGetSmallNumberValid](docs/Model/UserImportsGetSmallNumberValid.md)
+ - [UserLeadReceiverGet](docs/Model/UserLeadReceiverGet.md)
+ - [UserLeadReceiversPost](docs/Model/UserLeadReceiversPost.md)
  - [UserUpdatePut](docs/Model/UserUpdatePut.md)
  - [UseractionStatistic](docs/Model/UseractionStatistic.md)
  - [UseractionStatisticUsers](docs/Model/UseractionStatisticUsers.md)

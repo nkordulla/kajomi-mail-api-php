@@ -4,6 +4,7 @@ All URIs are relative to *https://nextgen.kajomigenerator.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**mailingIdArchivePut**](MailingsApi.md#mailingIdArchivePut) | **PUT** /mailing/{id}/archive | 
 [**mailingIdDelete**](MailingsApi.md#mailingIdDelete) | **DELETE** /mailing/{id} | 
 [**mailingIdExportGet**](MailingsApi.md#mailingIdExportGet) | **GET** /mailing/{id}/export | 
 [**mailingIdGet**](MailingsApi.md#mailingIdGet) | **GET** /mailing/{id} | 
@@ -18,6 +19,61 @@ Method | HTTP request | Description
 [**mailingslogsGet**](MailingsApi.md#mailingslogsGet) | **GET** /mailingslogs | 
 [**spamcheckPut**](MailingsApi.md#spamcheckPut) | **PUT** /spamcheck | 
 
+
+# **mailingIdArchivePut**
+> \Swagger\Client\Model\Htmlresponse mailingIdArchivePut($id, $body)
+
+
+
+Get a untracked Mailing that you can use for archive.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\MailingsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 
+$body = new \Swagger\Client\Model\MailingArchivePut(); // \Swagger\Client\Model\MailingArchivePut | 
+
+try {
+    $result = $apiInstance->mailingIdArchivePut($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MailingsApi->mailingIdArchivePut: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  |
+ **body** | [**\Swagger\Client\Model\MailingArchivePut**](../Model/MailingArchivePut.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\Htmlresponse**](../Model/Htmlresponse.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **mailingIdDelete**
 > mailingIdDelete($id)
@@ -290,7 +346,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **mailingIdLinksGet**
-> \Swagger\Client\Model\MailingLinks mailingIdLinksGet()
+> \Swagger\Client\Model\MailingLinks mailingIdLinksGet($id)
 
 
 
@@ -310,9 +366,10 @@ $apiInstance = new Swagger\Client\Api\MailingsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$id = "id_example"; // string | mailing_id
 
 try {
-    $result = $apiInstance->mailingIdLinksGet();
+    $result = $apiInstance->mailingIdLinksGet($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MailingsApi->mailingIdLinksGet: ', $e->getMessage(), PHP_EOL;
@@ -321,7 +378,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| mailing_id |
 
 ### Return type
 

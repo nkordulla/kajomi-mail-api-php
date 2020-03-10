@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionMailCreatePostResultAttachments
+ * UserLeadReceiversPost
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * TransactionMailCreatePostResultAttachments Class Doc Comment
+ * UserLeadReceiversPost Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TransactionMailCreatePostResultAttachments implements ModelInterface, ArrayAccess
+class UserLeadReceiversPost implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $swaggerModelName = 'transactionMailCreatePostResult_attachments';
+    protected static $swaggerModelName = 'userLeadReceiversPost';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filename' => 'string'
+        'access_token' => 'string',
+        'listnum' => 'float'
     ];
 
     /**
@@ -66,7 +67,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'filename' => null
+        'access_token' => null,
+        'listnum' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'filename' => 'filename'
+        'access_token' => 'access_token',
+        'listnum' => 'listnum'
     ];
 
     /**
@@ -105,7 +108,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'filename' => 'setFilename'
+        'access_token' => 'setAccessToken',
+        'listnum' => 'setListnum'
     ];
 
     /**
@@ -114,7 +118,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'filename' => 'getFilename'
+        'access_token' => 'getAccessToken',
+        'listnum' => 'getListnum'
     ];
 
     /**
@@ -177,7 +182,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
+        $this->container['access_token'] = isset($data['access_token']) ? $data['access_token'] : null;
+        $this->container['listnum'] = isset($data['listnum']) ? $data['listnum'] : null;
     }
 
     /**
@@ -189,6 +195,12 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
     {
         $invalidProperties = [];
 
+        if ($this->container['access_token'] === null) {
+            $invalidProperties[] = "'access_token' can't be null";
+        }
+        if ($this->container['listnum'] === null) {
+            $invalidProperties[] = "'listnum' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -205,25 +217,49 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
 
 
     /**
-     * Gets filename
+     * Gets access_token
      *
      * @return string
      */
-    public function getFilename()
+    public function getAccessToken()
     {
-        return $this->container['filename'];
+        return $this->container['access_token'];
     }
 
     /**
-     * Sets filename
+     * Sets access_token
      *
-     * @param string $filename the name of the filename
+     * @param string $access_token access_token which is used to query during post of an user to the extern site
      *
      * @return $this
      */
-    public function setFilename($filename)
+    public function setAccessToken($access_token)
     {
-        $this->container['filename'] = $filename;
+        $this->container['access_token'] = $access_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets listnum
+     *
+     * @return float
+     */
+    public function getListnum()
+    {
+        return $this->container['listnum'];
+    }
+
+    /**
+     * Sets listnum
+     *
+     * @param float $listnum id of list where to add this user with this hook
+     *
+     * @return $this
+     */
+    public function setListnum($listnum)
+    {
+        $this->container['listnum'] = $listnum;
 
         return $this;
     }

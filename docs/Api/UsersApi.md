@@ -17,6 +17,10 @@ Method | HTTP request | Description
 [**listsUsersImportsGet**](UsersApi.md#listsUsersImportsGet) | **GET** /lists/users/imports | 
 [**usersDelete**](UsersApi.md#usersDelete) | **DELETE** /users | 
 [**usersExportPost**](UsersApi.md#usersExportPost) | **POST** /users/export | 
+[**usersLeadExternReceiverIdId2Get**](UsersApi.md#usersLeadExternReceiverIdId2Get) | **GET** /users/lead/extern/receiver/{id}/{id2} | 
+[**usersLeadReceiverIdDelete**](UsersApi.md#usersLeadReceiverIdDelete) | **DELETE** /users/lead/receiver/{id} | 
+[**usersLeadReceiverIdGet**](UsersApi.md#usersLeadReceiverIdGet) | **GET** /users/lead/receiver/{id} | 
+[**usersLeadReceiversPost**](UsersApi.md#usersLeadReceiversPost) | **POST** /users/lead/receivers | 
 [**usersPut**](UsersApi.md#usersPut) | **PUT** /users | 
 [**usersUpdatePut**](UsersApi.md#usersUpdatePut) | **PUT** /users/update | 
 
@@ -724,6 +728,215 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: text/csv
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **usersLeadExternReceiverIdId2Get**
+> string usersLeadExternReceiverIdId2Get($id, $id2)
+
+
+
+Verify the lead receiver. You get this url after creation of receiver. Response is just the challenge
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = 56; // int | guid
+$id2 = 56; // int | base64 client_id
+
+try {
+    $result = $apiInstance->usersLeadExternReceiverIdId2Get($id, $id2);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->usersLeadExternReceiverIdId2Get: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| guid |
+ **id2** | **int**| base64 client_id |
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **usersLeadReceiverIdDelete**
+> usersLeadReceiverIdDelete($id)
+
+
+
+Delete an receiver
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | id
+
+try {
+    $apiInstance->usersLeadReceiverIdDelete($id);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->usersLeadReceiverIdDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **usersLeadReceiverIdGet**
+> \Swagger\Client\Model\UserLeadReceiverGet usersLeadReceiverIdGet($id)
+
+
+
+Get the status and all information of a receiver
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | id
+
+try {
+    $result = $apiInstance->usersLeadReceiverIdGet($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->usersLeadReceiverIdGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| id |
+
+### Return type
+
+[**\Swagger\Client\Model\UserLeadReceiverGet**](../Model/UserLeadReceiverGet.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **usersLeadReceiversPost**
+> \Swagger\Client\Model\UserLeadReceiverGet usersLeadReceiversPost($body)
+
+
+
+Create an unverified hook for adding/editing users. You need to be a moderator. e.g. You can use it for facebook leads ad
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Swagger\Client\Model\UserLeadReceiversPost(); // \Swagger\Client\Model\UserLeadReceiversPost | leadreceivers
+
+try {
+    $result = $apiInstance->usersLeadReceiversPost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->usersLeadReceiversPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\UserLeadReceiversPost**](../Model/UserLeadReceiversPost.md)| leadreceivers |
+
+### Return type
+
+[**\Swagger\Client\Model\UserLeadReceiverGet**](../Model/UserLeadReceiverGet.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

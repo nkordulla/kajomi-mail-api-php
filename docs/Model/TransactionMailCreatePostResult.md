@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** |  | [optional] 
+**id** | **float** | id of the transaction mail | [optional] 
 **senderemail** | **string** | senderemail | [optional] 
 **rcptemail** | **string** | mail of user | [optional] 
 **subject** | **string** | subject | [optional] 

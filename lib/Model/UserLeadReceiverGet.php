@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionMailCreatePostResult
+ * UserLeadReceiverGet
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * TransactionMailCreatePostResult Class Doc Comment
+ * UserLeadReceiverGet Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
+class UserLeadReceiverGet implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'transactionMailCreatePostResult';
+    protected static $swaggerModelName = 'userLeadReceiverGet';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,15 +57,13 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'access_token' => 'string',
+        'listnum' => 'float',
+        'verify_token' => 'string',
+        'status' => 'string',
+        'url' => 'string',
         'id' => 'float',
-        'senderemail' => 'string',
-        'rcptemail' => 'string',
-        'subject' => 'string',
-        'sent_id' => 'float',
-        'class_name' => 'string',
-        'attachments' => '\Swagger\Client\Model\TransactionMailCreatePostResultAttachments[]',
-        'guid' => 'string',
-        'mailing' => '\Swagger\Client\Model\TransactionMailing'
+        'guid' => 'string'
     ];
 
     /**
@@ -74,15 +72,13 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'access_token' => null,
+        'listnum' => null,
+        'verify_token' => null,
+        'status' => null,
+        'url' => null,
         'id' => null,
-        'senderemail' => null,
-        'rcptemail' => null,
-        'subject' => null,
-        'sent_id' => null,
-        'class_name' => null,
-        'attachments' => null,
-        'guid' => null,
-        'mailing' => null
+        'guid' => null
     ];
 
     /**
@@ -112,15 +108,13 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'access_token' => 'access_token',
+        'listnum' => 'listnum',
+        'verify_token' => 'verify_token',
+        'status' => 'status',
+        'url' => 'url',
         'id' => 'id',
-        'senderemail' => 'senderemail',
-        'rcptemail' => 'rcptemail',
-        'subject' => 'subject',
-        'sent_id' => 'sent_id',
-        'class_name' => 'class_name',
-        'attachments' => 'attachments',
-        'guid' => 'guid',
-        'mailing' => 'mailing'
+        'guid' => 'guid'
     ];
 
     /**
@@ -129,15 +123,13 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'access_token' => 'setAccessToken',
+        'listnum' => 'setListnum',
+        'verify_token' => 'setVerifyToken',
+        'status' => 'setStatus',
+        'url' => 'setUrl',
         'id' => 'setId',
-        'senderemail' => 'setSenderemail',
-        'rcptemail' => 'setRcptemail',
-        'subject' => 'setSubject',
-        'sent_id' => 'setSentId',
-        'class_name' => 'setClassName',
-        'attachments' => 'setAttachments',
-        'guid' => 'setGuid',
-        'mailing' => 'setMailing'
+        'guid' => 'setGuid'
     ];
 
     /**
@@ -146,15 +138,13 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'access_token' => 'getAccessToken',
+        'listnum' => 'getListnum',
+        'verify_token' => 'getVerifyToken',
+        'status' => 'getStatus',
+        'url' => 'getUrl',
         'id' => 'getId',
-        'senderemail' => 'getSenderemail',
-        'rcptemail' => 'getRcptemail',
-        'subject' => 'getSubject',
-        'sent_id' => 'getSentId',
-        'class_name' => 'getClassName',
-        'attachments' => 'getAttachments',
-        'guid' => 'getGuid',
-        'mailing' => 'getMailing'
+        'guid' => 'getGuid'
     ];
 
     /**
@@ -198,8 +188,23 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const STATUS_UNVERIFIED = 'unverified';
+    const STATUS_VERIFIED = 'verified';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_UNVERIFIED,
+            self::STATUS_VERIFIED,
+        ];
+    }
     
 
     /**
@@ -217,15 +222,13 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['access_token'] = isset($data['access_token']) ? $data['access_token'] : null;
+        $this->container['listnum'] = isset($data['listnum']) ? $data['listnum'] : null;
+        $this->container['verify_token'] = isset($data['verify_token']) ? $data['verify_token'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['senderemail'] = isset($data['senderemail']) ? $data['senderemail'] : null;
-        $this->container['rcptemail'] = isset($data['rcptemail']) ? $data['rcptemail'] : null;
-        $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
-        $this->container['sent_id'] = isset($data['sent_id']) ? $data['sent_id'] : null;
-        $this->container['class_name'] = isset($data['class_name']) ? $data['class_name'] : null;
-        $this->container['attachments'] = isset($data['attachments']) ? $data['attachments'] : null;
         $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
-        $this->container['mailing'] = isset($data['mailing']) ? $data['mailing'] : null;
     }
 
     /**
@@ -237,6 +240,35 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['access_token'] === null) {
+            $invalidProperties[] = "'access_token' can't be null";
+        }
+        if ($this->container['listnum'] === null) {
+            $invalidProperties[] = "'listnum' can't be null";
+        }
+        if ($this->container['verify_token'] === null) {
+            $invalidProperties[] = "'verify_token' can't be null";
+        }
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'status', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['url'] === null) {
+            $invalidProperties[] = "'url' can't be null";
+        }
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['guid'] === null) {
+            $invalidProperties[] = "'guid' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -253,6 +285,135 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
 
 
     /**
+     * Gets access_token
+     *
+     * @return string
+     */
+    public function getAccessToken()
+    {
+        return $this->container['access_token'];
+    }
+
+    /**
+     * Sets access_token
+     *
+     * @param string $access_token access_token which is used to query during post of an user to the extern site
+     *
+     * @return $this
+     */
+    public function setAccessToken($access_token)
+    {
+        $this->container['access_token'] = $access_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets listnum
+     *
+     * @return float
+     */
+    public function getListnum()
+    {
+        return $this->container['listnum'];
+    }
+
+    /**
+     * Sets listnum
+     *
+     * @param float $listnum id of list
+     *
+     * @return $this
+     */
+    public function setListnum($listnum)
+    {
+        $this->container['listnum'] = $listnum;
+
+        return $this;
+    }
+
+    /**
+     * Gets verify_token
+     *
+     * @return string
+     */
+    public function getVerifyToken()
+    {
+        return $this->container['verify_token'];
+    }
+
+    /**
+     * Sets verify_token
+     *
+     * @param string $verify_token use this to verify the url
+     *
+     * @return $this
+     */
+    public function setVerifyToken($verify_token)
+    {
+        $this->container['verify_token'] = $verify_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'status', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     *
+     * @param string $url the url of this hook. Use this url with hub.mode=subscribe&hub.verify_token=[verify_token]&hub.challend=challenge to set the hook to verified
+     *
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return float
@@ -265,157 +426,13 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param float $id id of the transaction mail
+     * @param float $id id of the receiver
      *
      * @return $this
      */
     public function setId($id)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets senderemail
-     *
-     * @return string
-     */
-    public function getSenderemail()
-    {
-        return $this->container['senderemail'];
-    }
-
-    /**
-     * Sets senderemail
-     *
-     * @param string $senderemail senderemail
-     *
-     * @return $this
-     */
-    public function setSenderemail($senderemail)
-    {
-        $this->container['senderemail'] = $senderemail;
-
-        return $this;
-    }
-
-    /**
-     * Gets rcptemail
-     *
-     * @return string
-     */
-    public function getRcptemail()
-    {
-        return $this->container['rcptemail'];
-    }
-
-    /**
-     * Sets rcptemail
-     *
-     * @param string $rcptemail mail of user
-     *
-     * @return $this
-     */
-    public function setRcptemail($rcptemail)
-    {
-        $this->container['rcptemail'] = $rcptemail;
-
-        return $this;
-    }
-
-    /**
-     * Gets subject
-     *
-     * @return string
-     */
-    public function getSubject()
-    {
-        return $this->container['subject'];
-    }
-
-    /**
-     * Sets subject
-     *
-     * @param string $subject subject
-     *
-     * @return $this
-     */
-    public function setSubject($subject)
-    {
-        $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets sent_id
-     *
-     * @return float
-     */
-    public function getSentId()
-    {
-        return $this->container['sent_id'];
-    }
-
-    /**
-     * Sets sent_id
-     *
-     * @param float $sent_id the send_id representation for all the bundeled TransactionMails of this class
-     *
-     * @return $this
-     */
-    public function setSentId($sent_id)
-    {
-        $this->container['sent_id'] = $sent_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets class_name
-     *
-     * @return string
-     */
-    public function getClassName()
-    {
-        return $this->container['class_name'];
-    }
-
-    /**
-     * Sets class_name
-     *
-     * @param string $class_name the classname
-     *
-     * @return $this
-     */
-    public function setClassName($class_name)
-    {
-        $this->container['class_name'] = $class_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets attachments
-     *
-     * @return \Swagger\Client\Model\TransactionMailCreatePostResultAttachments[]
-     */
-    public function getAttachments()
-    {
-        return $this->container['attachments'];
-    }
-
-    /**
-     * Sets attachments
-     *
-     * @param \Swagger\Client\Model\TransactionMailCreatePostResultAttachments[] $attachments the attachments
-     *
-     * @return $this
-     */
-    public function setAttachments($attachments)
-    {
-        $this->container['attachments'] = $attachments;
 
         return $this;
     }
@@ -433,37 +450,13 @@ class TransactionMailCreatePostResult implements ModelInterface, ArrayAccess
     /**
      * Sets guid
      *
-     * @param string $guid guid of the transaction mail can be used for querying the server feedback. used for get request
+     * @param string $guid guid of the receiver with /users/lead/receiver/[GUID] you can just query the information of this receiver
      *
      * @return $this
      */
     public function setGuid($guid)
     {
         $this->container['guid'] = $guid;
-
-        return $this;
-    }
-
-    /**
-     * Gets mailing
-     *
-     * @return \Swagger\Client\Model\TransactionMailing
-     */
-    public function getMailing()
-    {
-        return $this->container['mailing'];
-    }
-
-    /**
-     * Sets mailing
-     *
-     * @param \Swagger\Client\Model\TransactionMailing $mailing Mail to send
-     *
-     * @return $this
-     */
-    public function setMailing($mailing)
-    {
-        $this->container['mailing'] = $mailing;
 
         return $this;
     }

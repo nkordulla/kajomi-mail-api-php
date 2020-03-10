@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionMailCreatePostResultAttachments
+ * MailingTag
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * TransactionMailCreatePostResultAttachments Class Doc Comment
+ * MailingTag Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TransactionMailCreatePostResultAttachments implements ModelInterface, ArrayAccess
+class MailingTag implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $swaggerModelName = 'transactionMailCreatePostResult_attachments';
+    protected static $swaggerModelName = 'mailing_tag';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filename' => 'string'
+        'tag_id' => 'float',
+        'mailing_id' => 'float'
     ];
 
     /**
@@ -66,7 +67,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'filename' => null
+        'tag_id' => null,
+        'mailing_id' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'filename' => 'filename'
+        'tag_id' => 'tag_id',
+        'mailing_id' => 'mailing_id'
     ];
 
     /**
@@ -105,7 +108,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'filename' => 'setFilename'
+        'tag_id' => 'setTagId',
+        'mailing_id' => 'setMailingId'
     ];
 
     /**
@@ -114,7 +118,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'filename' => 'getFilename'
+        'tag_id' => 'getTagId',
+        'mailing_id' => 'getMailingId'
     ];
 
     /**
@@ -177,7 +182,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
+        $this->container['tag_id'] = isset($data['tag_id']) ? $data['tag_id'] : null;
+        $this->container['mailing_id'] = isset($data['mailing_id']) ? $data['mailing_id'] : null;
     }
 
     /**
@@ -205,25 +211,49 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
 
 
     /**
-     * Gets filename
+     * Gets tag_id
      *
-     * @return string
+     * @return float
      */
-    public function getFilename()
+    public function getTagId()
     {
-        return $this->container['filename'];
+        return $this->container['tag_id'];
     }
 
     /**
-     * Sets filename
+     * Sets tag_id
      *
-     * @param string $filename the name of the filename
+     * @param float $tag_id the tag id
      *
      * @return $this
      */
-    public function setFilename($filename)
+    public function setTagId($tag_id)
     {
-        $this->container['filename'] = $filename;
+        $this->container['tag_id'] = $tag_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets mailing_id
+     *
+     * @return float
+     */
+    public function getMailingId()
+    {
+        return $this->container['mailing_id'];
+    }
+
+    /**
+     * Sets mailing_id
+     *
+     * @param float $mailing_id id of the mailing
+     *
+     * @return $this
+     */
+    public function setMailingId($mailing_id)
+    {
+        $this->container['mailing_id'] = $mailing_id;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionMailCreatePostResultAttachments
+ * MailingArchivePut
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * TransactionMailCreatePostResultAttachments Class Doc Comment
+ * MailingArchivePut Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TransactionMailCreatePostResultAttachments implements ModelInterface, ArrayAccess
+class MailingArchivePut implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $swaggerModelName = 'transactionMailCreatePostResult_attachments';
+    protected static $swaggerModelName = 'mailingArchivePut';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filename' => 'string'
+        'user' => '\Swagger\Client\Model\UserUpdatePut',
+        'embeddable' => 'bool'
     ];
 
     /**
@@ -66,7 +67,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'filename' => null
+        'user' => null,
+        'embeddable' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'filename' => 'filename'
+        'user' => 'user',
+        'embeddable' => 'embeddable'
     ];
 
     /**
@@ -105,7 +108,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'filename' => 'setFilename'
+        'user' => 'setUser',
+        'embeddable' => 'setEmbeddable'
     ];
 
     /**
@@ -114,7 +118,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'filename' => 'getFilename'
+        'user' => 'getUser',
+        'embeddable' => 'getEmbeddable'
     ];
 
     /**
@@ -177,7 +182,8 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
+        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
+        $this->container['embeddable'] = isset($data['embeddable']) ? $data['embeddable'] : null;
     }
 
     /**
@@ -189,6 +195,9 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
     {
         $invalidProperties = [];
 
+        if ($this->container['user'] === null) {
+            $invalidProperties[] = "'user' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -205,25 +214,49 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
 
 
     /**
-     * Gets filename
+     * Gets user
      *
-     * @return string
+     * @return \Swagger\Client\Model\UserUpdatePut
      */
-    public function getFilename()
+    public function getUser()
     {
-        return $this->container['filename'];
+        return $this->container['user'];
     }
 
     /**
-     * Sets filename
+     * Sets user
      *
-     * @param string $filename the name of the filename
+     * @param \Swagger\Client\Model\UserUpdatePut $user user
      *
      * @return $this
      */
-    public function setFilename($filename)
+    public function setUser($user)
     {
-        $this->container['filename'] = $filename;
+        $this->container['user'] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Gets embeddable
+     *
+     * @return bool
+     */
+    public function getEmbeddable()
+    {
+        return $this->container['embeddable'];
+    }
+
+    /**
+     * Sets embeddable
+     *
+     * @param bool $embeddable true means not a whole html page but a div comes back, what you can use inside an website.
+     *
+     * @return $this
+     */
+    public function setEmbeddable($embeddable)
+    {
+        $this->container['embeddable'] = $embeddable;
 
         return $this;
     }

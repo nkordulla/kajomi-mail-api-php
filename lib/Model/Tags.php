@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionMailCreatePostResultAttachments
+ * Tags
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * TransactionMailCreatePostResultAttachments Class Doc Comment
+ * Tags Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TransactionMailCreatePostResultAttachments implements ModelInterface, ArrayAccess
+class Tags implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $swaggerModelName = 'transactionMailCreatePostResult_attachments';
+    protected static $swaggerModelName = 'tags';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filename' => 'string'
+        'tags' => '\Swagger\Client\Model\Tag[]'
     ];
 
     /**
@@ -66,7 +66,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'filename' => null
+        'tags' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'filename' => 'filename'
+        'tags' => 'tags'
     ];
 
     /**
@@ -105,7 +105,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'filename' => 'setFilename'
+        'tags' => 'setTags'
     ];
 
     /**
@@ -114,7 +114,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'filename' => 'getFilename'
+        'tags' => 'getTags'
     ];
 
     /**
@@ -177,7 +177,7 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
+        $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
     }
 
     /**
@@ -189,6 +189,9 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
     {
         $invalidProperties = [];
 
+        if ($this->container['tags'] === null) {
+            $invalidProperties[] = "'tags' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -205,25 +208,25 @@ class TransactionMailCreatePostResultAttachments implements ModelInterface, Arra
 
 
     /**
-     * Gets filename
+     * Gets tags
      *
-     * @return string
+     * @return \Swagger\Client\Model\Tag[]
      */
-    public function getFilename()
+    public function getTags()
     {
-        return $this->container['filename'];
+        return $this->container['tags'];
     }
 
     /**
-     * Sets filename
+     * Sets tags
      *
-     * @param string $filename the name of the filename
+     * @param \Swagger\Client\Model\Tag[] $tags tags
      *
      * @return $this
      */
-    public function setFilename($filename)
+    public function setTags($tags)
     {
-        $this->container['filename'] = $filename;
+        $this->container['tags'] = $tags;
 
         return $this;
     }

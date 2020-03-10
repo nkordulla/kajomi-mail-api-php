@@ -1,6 +1,6 @@
 <?php
 /**
- * MailingsApiTest
+ * TagsApiTest
  * PHP version 5
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * MailingsApiTest Class Doc Comment
+ * TagsApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MailingsApiTest extends \PHPUnit_Framework_TestCase
+class TagsApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -72,142 +72,82 @@ class MailingsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for mailingIdArchivePut
+     * Test case for mailingIdTagId2Delete
      *
      * .
      *
      */
-    public function testMailingIdArchivePut()
+    public function testMailingIdTagId2Delete()
     {
     }
 
     /**
-     * Test case for mailingIdDelete
+     * Test case for mailingIdTagsGet
      *
      * .
      *
      */
-    public function testMailingIdDelete()
+    public function testMailingIdTagsGet()
     {
     }
 
     /**
-     * Test case for mailingIdExportGet
+     * Test case for mailingIdTagsPost
      *
      * .
      *
      */
-    public function testMailingIdExportGet()
+    public function testMailingIdTagsPost()
     {
     }
 
     /**
-     * Test case for mailingIdGet
+     * Test case for tagIdDelete
      *
      * .
      *
      */
-    public function testMailingIdGet()
+    public function testTagIdDelete()
     {
     }
 
     /**
-     * Test case for mailingIdLinkId2Get
+     * Test case for tagIdGet
      *
      * .
      *
      */
-    public function testMailingIdLinkId2Get()
+    public function testTagIdGet()
     {
     }
 
     /**
-     * Test case for mailingIdLinkId2Put
+     * Test case for tagIdPut
      *
      * .
      *
      */
-    public function testMailingIdLinkId2Put()
+    public function testTagIdPut()
     {
     }
 
     /**
-     * Test case for mailingIdLinksGet
+     * Test case for tagsGet
      *
      * .
      *
      */
-    public function testMailingIdLinksGet()
+    public function testTagsGet()
     {
     }
 
     /**
-     * Test case for mailingIdPut
+     * Test case for tagsPost
      *
      * .
      *
      */
-    public function testMailingIdPut()
-    {
-    }
-
-    /**
-     * Test case for mailingIdQueuePut
-     *
-     * .
-     *
-     */
-    public function testMailingIdQueuePut()
-    {
-    }
-
-    /**
-     * Test case for mailingsGet
-     *
-     * .
-     *
-     */
-    public function testMailingsGet()
-    {
-    }
-
-    /**
-     * Test case for mailingsPost
-     *
-     * .
-     *
-     */
-    public function testMailingsPost()
-    {
-    }
-
-    /**
-     * Test case for mailingsPut
-     *
-     * .
-     *
-     */
-    public function testMailingsPut()
-    {
-    }
-
-    /**
-     * Test case for mailingslogsGet
-     *
-     * .
-     *
-     */
-    public function testMailingslogsGet()
-    {
-    }
-
-    /**
-     * Test case for spamcheckPut
-     *
-     * .
-     *
-     */
-    public function testSpamcheckPut()
+    public function testTagsPost()
     {
     }
 }

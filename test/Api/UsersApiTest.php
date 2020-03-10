@@ -202,6 +202,46 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for usersLeadExternReceiverIdId2Get
+     *
+     * .
+     *
+     */
+    public function testUsersLeadExternReceiverIdId2Get()
+    {
+    }
+
+    /**
+     * Test case for usersLeadReceiverIdDelete
+     *
+     * .
+     *
+     */
+    public function testUsersLeadReceiverIdDelete()
+    {
+    }
+
+    /**
+     * Test case for usersLeadReceiverIdGet
+     *
+     * .
+     *
+     */
+    public function testUsersLeadReceiverIdGet()
+    {
+    }
+
+    /**
+     * Test case for usersLeadReceiversPost
+     *
+     * .
+     *
+     */
+    public function testUsersLeadReceiversPost()
+    {
+    }
+
+    /**
      * Test case for usersPut
      *
      * .
